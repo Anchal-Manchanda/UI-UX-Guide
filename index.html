@@ -1,473 +1,470 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Styling Guide</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UI Styling Guide</title>
-
-  <style>
-    /* =========================
+    <style>
+      /* =========================
    RESET & BASE
 ========================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFFFFF;
-      color: #666666;
-    }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #666666;
+      }
 
-    /* =========================
+      /* =========================
    TYPOGRAPHY – DESKTOP
 ========================= */
-    h1 {
-      font-size: 48px;
-      line-height: 56px;
-      color: #1B1C1D;
-      margin-bottom: 16px;
-    }
-
-    h2 {
-      font-size: 36px;
-      line-height: 44px;
-      color: #1B1C1D;
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      font-size: 28px;
-      line-height: 36px;
-      color: #1B1C1D;
-      margin-bottom: 10px;
-    }
-
-    h4 {
-      font-size: 22px;
-      line-height: 32px;
-      color: #1B1C1D;
-      margin-bottom: 8px;
-    }
-
-    h5 {
-      font-size: 18px;
-      line-height: 28px;
-      color: #1B1C1D;
-      margin-bottom: 6px;
-    }
-
-    h6 {
-      font-size: 16px;
-      line-height: 24px;
-      color: #1B1C1D;
-      margin-bottom: 6px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 28px;
-      margin-bottom: 16px;
-    }
-
-    /* =========================
-   LAYOUT & SPACING
-========================= */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    .section {
-      margin-bottom: 80px;
-    }
-
-    .card {
-      background-color: #F0F0F0;
-      padding: 32px;
-      border-radius: 8px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    /* =========================
-   BUTTONS & CTAs
-========================= */
-    button {
-      height: 48px;
-      padding: 16px 12px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      line-height: 20px;
-      color: #FFFFFF;
-    }
-
-    .btn-primary {
-      background-color: #004237;
-    }
-
-    .btn-secondary {
-      background-color: #666666;
-    }
-
-    .btn-disabled {
-      background-color: #CCCCCC;
-      cursor: not-allowed;
-    }
-
-    .button-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    /* =========================
-   FORMS & INPUTS
-========================= */
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 16px;
-      color: #1B1C1D;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      height: 48px;
-      padding: 16px;
-      border: 1px solid #CCCCCC;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    textarea {
-      min-height: 100px;
-    }
-
-    .form-group {
-      margin-bottom: 24px;
-    }
-
-    .error-text {
-      margin-top: 6px;
-      font-size: 14px;
-      color: #ED3433;
-    }
-
-    /* =========================
-   ICONS
-========================= */
-    .icon {
-      width: 24px;
-      height: 24px;
-      background-color: #666666;
-      border-radius: 4px;
-      display: inline-block;
-      margin-right: 8px;
-    }
-
-    .card.defaulticon {
-      display: flex;
-      align-items: center;
-    }
-
-    .color-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .color-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    .color-swatch {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    :root {
-      /* Text Colors */
-      --color-primary-text: #1B1C1D;
-      /* Headings, main content */
-      --color-secondary-text: #666666;
-      /* Paragraphs, descriptions */
-
-      /* Background Colors */
-      --color-background: #FFFFFF;
-      /* Page background */
-      --color-section: #F0F0F0;
-      /* Cards, grouped sections */
-
-      /* Button Colors */
-      --color-primary-button: #004237;
-      /* Client primary color */
-      --color-disabled: #CCCCCC;
-      /* Disabled buttons / inputs */
-
-      /* Status Colors */
-      --color-error: #ED3433;
-      /* Errors, alerts */
-      --color-success: #47B274;
-      /* Success messages */
-    }
-
-    .swatch-primary-text {
-      background-color: var(--color-primary-text);
-    }
-
-    .swatch-secondary-text {
-      background-color: var(--color-secondary-text);
-    }
-
-    .swatch-background {
-      background-color: var(--color-background);
-    }
-
-    .swatch-section {
-      background-color: var(--color-section);
-    }
-
-    .swatch-primary-button {
-      background-color: var(--color-primary-button);
-    }
-
-    .swatch-disabled {
-      background-color: var(--color-disabled);
-    }
-
-    .swatch-error {
-      background-color: var(--color-error);
-    }
-
-    .swatch-success {
-      background-color: var(--color-success);
-    }
-
-    /* =========================
-   TABLET (≤1024px)
-========================= */
-    @media (max-width: 1024px) {
       h1 {
+        font-size: 48px;
+        line-height: 56px;
+        color: #1b1c1d;
+        margin-bottom: 16px;
+      }
+
+      h2 {
         font-size: 36px;
         line-height: 44px;
-      }
-
-      h2 {
-        font-size: 28px;
-        line-height: 36px;
+        color: #1b1c1d;
+        margin-bottom: 12px;
       }
 
       h3 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 28px;
+        line-height: 36px;
+        color: #1b1c1d;
+        margin-bottom: 10px;
       }
 
       h4 {
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 22px;
+        line-height: 32px;
+        color: #1b1c1d;
+        margin-bottom: 8px;
       }
 
       h5 {
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      h6 {
-        font-size: 14px;
-        line-height: 22px;
-      }
-
-      p {
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      .container {
-        padding: 60px 24px;
-      }
-
-      .icon {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    /* =========================
-   MOBILE (≤767px)
-========================= */
-    @media (max-width: 767px) {
-      h1 {
-        font-size: 28px;
-        line-height: 36px;
-      }
-
-      h2 {
-        font-size: 24px;
-        line-height: 32px;
-      }
-
-      h3 {
-        font-size: 20px;
-        line-height: 28px;
-      }
-
-      h4 {
         font-size: 18px;
-        line-height: 26px;
-      }
-
-      h5 {
-        font-size: 16px;
-        line-height: 24px;
+        line-height: 28px;
+        color: #1b1c1d;
+        margin-bottom: 6px;
       }
 
       h6 {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1b1c1d;
+        margin-bottom: 6px;
       }
 
       p {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 16px;
       }
 
-      button {
-        height: 44px;
-        width: 100%;
-        font-size: 14px;
-        line-height: 18px;
-      }
-
+      /* =========================
+   LAYOUT & SPACING
+========================= */
       .container {
-        padding: 40px 16px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 24px;
       }
 
-      .icon {
-        width: 16px;
-        height: 16px;
+      .section {
+        margin-bottom: 80px;
+      }
+
+      .card {
+        background-color: #f0f0f0;
+        padding: 32px;
+        border-radius: 8px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      /* =========================
+   BUTTONS & CTAs
+========================= */
+      button {
+        height: 48px;
+        padding: 16px 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+      }
+
+      .btn-primary {
+        background-color: #004237;
+      }
+
+      .btn-secondary {
+        background-color: #666666;
+      }
+
+      .btn-disabled {
+        background-color: #a7a7a7;
+        cursor: not-allowed;
       }
 
       .button-group {
-        flex-direction: column;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
       }
-    }
-  </style>
-</head>
 
-<body>
+      /* =========================
+   FORMS & INPUTS
+========================= */
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #1b1c1d;
+      }
 
-  <div class="container">
+      input,
+      select,
+      textarea {
+        width: 100%;
+        height: 48px;
+        padding: 16px;
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
 
-    <!-- INTRO -->
-    <section class="section">
-      <h1>UI Styling Guide</h1>
-      <p>
-        This document defines UI styling rules to keep designs consistent,
-        readable, and usable across Desktop, Tablet, and Mobile devices.
-      </p>
-    </section>
+      textarea {
+        min-height: 100px;
+      }
 
-    <!-- TYPOGRAPHY -->
-    <section class="section">
-      <h2>Typography</h2>
-      <div class="card">
-        <h1>H1 – Main Heading</h1>
-        <h2>H2 – Section Heading</h2>
-        <h3>H3 – Subheading</h3>
-        <h4>H4 – Minor Heading</h4>
-        <h5>H5 – Caption Heading</h5>
-        <h6>H6 – Small Heading</h6>
-        <p>Body text for comfortable reading.</p>
-      </div>
-    </section>
+      .form-group {
+        margin-bottom: 24px;
+      }
 
-    <!-- BASIC COLORS -->
-    <section class="section">
-      <h2>Basic UI Colors</h2>
-      <div class="card">
-        <div class="color-grid">
-          <div class="color-item">
-            <span class="color-swatch swatch-primary-text"></span> Primary Text
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-secondary-text"></span> Secondary Text
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-background"></span> Background
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-section"></span> Section / Card
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-primary-button"></span> Primary Button
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-disabled"></span> Disabled State
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-error"></span> Error
-          </div>
-          <div class="color-item">
-            <span class="color-swatch swatch-success"></span> Success
+      .error-text {
+        margin-top: 6px;
+        font-size: 14px;
+        color: #b00020;
+      }
+
+      /* =========================
+   ICONS
+========================= */
+      .icon {
+        width: 24px;
+        height: 24px;
+        background-color: #666666;
+        border-radius: 4px;
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .card.defaulticon {
+        display: flex;
+        align-items: center;
+      }
+
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .color-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .color-swatch {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      :root {
+        /* Text Colors */
+        --color-primary-text: #1b1c1d;
+        /* Headings, main content */
+        --color-secondary-text: #666666;
+        /* Paragraphs, descriptions */
+
+        /* Background Colors */
+        --color-background: #ffffff;
+        /* Page background */
+        --color-section: #f0f0f0;
+        /* Cards, grouped sections */
+
+        /* Button Colors */
+        --color-primary-button: #004237;
+        /* Client primary color */
+        --color-disabled: #cccccc;
+        /* Disabled buttons / inputs */
+
+        /* Status Colors */
+        --color-error: #ed3433;
+        /* Errors, alerts */
+        --color-success: #47b274;
+        /* Success messages */
+      }
+
+      .swatch-primary-text {
+        background-color: var(--color-primary-text);
+      }
+
+      .swatch-secondary-text {
+        background-color: var(--color-secondary-text);
+      }
+
+      .swatch-background {
+        background-color: var(--color-background);
+      }
+
+      .swatch-section {
+        background-color: var(--color-section);
+      }
+
+      .swatch-primary-button {
+        background-color: var(--color-primary-button);
+      }
+
+      .swatch-disabled {
+        background-color: var(--color-disabled);
+      }
+
+      .swatch-error {
+        background-color: var(--color-error);
+      }
+
+      .swatch-success {
+        background-color: var(--color-success);
+      }
+
+      /* =========================
+   TABLET (≤1024px)
+========================= */
+      @media (max-width: 1024px) {
+        h1 {
+          font-size: 36px;
+          line-height: 44px;
+        }
+
+        h2 {
+          font-size: 28px;
+          line-height: 36px;
+        }
+
+        h3 {
+          font-size: 24px;
+          line-height: 32px;
+        }
+
+        h4 {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        h5 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        h6 {
+          font-size: 14px;
+          line-height: 22px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        .container {
+          padding: 60px 24px;
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      /* =========================
+   MOBILE (≤767px)
+========================= */
+      @media (max-width: 767px) {
+        h1 {
+          font-size: 28px;
+          line-height: 36px;
+        }
+
+        h2 {
+          font-size: 24px;
+          line-height: 32px;
+        }
+
+        h3 {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        h4 {
+          font-size: 18px;
+          line-height: 26px;
+        }
+
+        h5 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        h6 {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        button {
+          height: 44px;
+          width: 100%;
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        .container {
+          padding: 40px 16px;
+        }
+
+        .icon {
+          width: 16px;
+          height: 16px;
+        }
+
+        .button-group {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- INTRO -->
+      <section class="section">
+        <h1>UI Styling Guide</h1>
+        <p>
+          This document defines UI styling rules to keep designs consistent,
+          readable, and usable across Desktop, Tablet, and Mobile devices.
+        </p>
+      </section>
+
+      <!-- TYPOGRAPHY -->
+      <section class="section">
+        <h2>Typography</h2>
+        <div class="card">
+          <h1>H1 – Main Heading</h1>
+          <h2>H2 – Section Heading</h2>
+          <h3>H3 – Subheading</h3>
+          <h4>H4 – Minor Heading</h4>
+          <h5>H5 – Caption Heading</h5>
+          <h6>H6 – Small Heading</h6>
+          <p>Body text for comfortable reading.</p>
+        </div>
+      </section>
+
+      <!-- BASIC COLORS -->
+      <section class="section">
+        <h2>Basic UI Colors</h2>
+        <div class="card">
+          <div class="color-grid">
+            <div class="color-item">
+              <span class="color-swatch swatch-primary-text"></span> Primary
+              Text
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-secondary-text"></span> Secondary
+              Text
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-background"></span> Background
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-section"></span> Section / Card
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-primary-button"></span> Primary
+              Button
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-disabled"></span> Disabled State
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-error"></span> Error
+            </div>
+            <div class="color-item">
+              <span class="color-swatch swatch-success"></span> Success
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- BUTTONS -->
-    <section class="section">
-      <h2>Buttons & CTAs</h2>
-      <div class="card button-group">
-        <button class="btn-primary">Primary Action</button>
-        <button class="btn-secondary">Secondary Action</button>
-        <button class="btn-disabled">Disabled</button>
-      </div>
-    </section>
-
-    <!-- FORMS -->
-    <section class="section">
-      <h2>Forms & Inputs</h2>
-      <div class="card">
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" />
-          <div class="error-text">Please enter a valid email</div>
+      <!-- BUTTONS -->
+      <section class="section">
+        <h2>Buttons & CTAs</h2>
+        <div class="card button-group">
+          <button class="btn-primary">Primary Action</button>
+          <button class="btn-secondary">Secondary Action</button>
+          <button class="btn-disabled" disabled>Disabled</button>
         </div>
+      </section>
 
-        <div class="form-group">
-          <label>Message</label>
-          <textarea></textarea>
+      <!-- FORMS -->
+      <section class="section">
+        <h2>Forms & Inputs</h2>
+        <div class="card">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" />
+            <div class="error-text">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ICONS -->
-    <section class="section">
-      <h2>Icons</h2>
-      <div class="card defaulticon">
-        <span class="icon"></span> Default icon size
-      </div>
-    </section>
-
-  </div>
-
-</body>
-
+      <!-- ICONS -->
+      <section class="section">
+        <h2>Icons</h2>
+        <div class="card defaulticon">
+          <span class="icon"></span> Default icon size
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
